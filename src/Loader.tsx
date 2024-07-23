@@ -9,7 +9,7 @@ export default function Loader() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowApp(true);
-    }, 10000);
+    }, 100000);
 
     return () => {
       clearTimeout(timeoutId);
@@ -21,7 +21,7 @@ export default function Loader() {
   }
 
   return (
-      <div className='main'>
+      <div className='main flex items-center justify-center flex-col'>
       <div><img src={loaderImage} alt='Loader-image' className='loader-image mb-4' /></div>
       <div className='loader'></div>
     </div>
