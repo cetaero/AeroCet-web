@@ -1,15 +1,18 @@
+import { NotFound } from '../Pages/404Error';
+import { Home } from '../Pages/Home'
+import { Teams } from '../Pages/Teams'
 import './App.css'
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 export const App = ()=>{
   
   return (
-    <>
-      <div className='flex-1 w-full h-full'>
-      <div className='justify-center items-center bg-slate-100'>
-        AeroCET
-      </div>
-      </div>
-    </>
+    <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/teams" element={<Teams />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Router>
   )
 }
 
