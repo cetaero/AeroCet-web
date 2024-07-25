@@ -9,7 +9,7 @@ export default function Loader() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowApp(true);
-    }, 500);
+    }, 2000);
 
     return () => {
       clearTimeout(timeoutId);
