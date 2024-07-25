@@ -2,3 +2,8 @@
   margin: 0%;
 }
 
+.app{
+  background-image: url("../assets/background/bgFull.png");
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
