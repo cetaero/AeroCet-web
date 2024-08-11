@@ -1,9 +1,12 @@
-import { Banner } from "../Components/Banner"
+import Intro from "../Components/Intro"
+import Navbar from "../Components/Navbar"
 
 export const Home = () =>{
       return(
           <>
-               <Banner/>
+               <Navbar/>
+               <Intro/>
+
           </>
       )    
 }
