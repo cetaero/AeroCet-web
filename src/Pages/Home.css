@@ -1,0 +1,38 @@
+/*::-webkit-scrollbar {
+          width: 1px;
+          height: 1px;
+        }
+        
+        ::-webkit-scrollbar-button {
+          width: 1px;
+          height: 1px;
+        }
+        
+
+        
+        .horizontal-scroll-wrapper {
+          width: calc(250px + 1px);
+          max-height: 750px;
+          margin: 0;
+          padding-top: 1px;
+          background: #abc;
+          overflow-y: auto;
+          overflow-x: hidden;
+          transform: rotate(-90deg) translateY(-250px);
+
+        }
+        .horizontal-scroll-wrapper > div {
+
+          padding: 20px;
+          background: #cab;
+          transform: rotate(90deg);
+
+        }
+        
+
+        .squares > div {
+          width: 250px;
+          height: 250px;
+          margin: 10px 0;
+        }
+          */

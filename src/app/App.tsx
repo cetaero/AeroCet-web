@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 export const App = ()=>{
   
   return (
-    <div className='app'>
+    <div className='app flex-1 w-full h-full'>
       <Router>
       <Routes>
       <Route path="/" element={<Home />} />

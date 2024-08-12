@@ -6,9 +6,5 @@
   background-image: url("../assets/background/bgFull.png");
   background-repeat: no-repeat; 
   background-size: cover;
-  width: 100px;
-  height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
   
 }

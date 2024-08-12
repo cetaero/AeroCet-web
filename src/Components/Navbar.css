@@ -5,3 +5,7 @@ h1{
           font-weight: 400;
           font-style: normal;
 }
+.nav{
+          -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
