@@ -1,10 +1,17 @@
-#root {
-  margin: 0%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Sancreek&display=swap');
 
-.app{
-  background-image: url("../assets/background/bgFull.png");
-  background-repeat: no-repeat; 
-  background-size: cover;
+App{
+  width: 100vw;
+  height: 100vh;
+}
+body{
+  background-color: #110011;
+  color: white;
+  
+}
+h1{
+  font-family: "Sancreek", serif;
+  font-weight: 400;
+  font-style: normal;
   
 }
