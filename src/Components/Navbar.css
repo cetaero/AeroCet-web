@@ -7,5 +7,5 @@ h1{
 }
 .nav{
           -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(2px);
+          backdrop-filter: blur(4px);
 }

@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       const handleScroll = (event: WheelEvent) => {
         event.preventDefault();
         element.scrollBy({
-          left: event.deltaY < 0 ? -1500 : 1500,
+          left: event.deltaY < 0 ? -1000 : 1000,
           behavior: 'smooth',
         });
       };
