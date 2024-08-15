@@ -13,7 +13,7 @@ export default function Contact() {
        <button><img src={download} alt='Loader-image' className='loader-image h-14' /></button>
        </div>
       </div>
-      <div className="flex justify-center mx-10 space-x-48 px-12">
+      <div className="flex justify-center mx-10 lg:space-x-48 sm:space-x-8 px-12">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:scale-110 transition-transform">
           <FaFacebookF size={32} />
         </a>
