@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* or any height you prefer */
+   /* or any height you prefer */
   text-align: center;
   width: 100vw;
   min-width: 100vw;
+  overflow-y: hidden;
   color: white; /* This will make the text stand out on the background colors */
 
 }
@@ -15,7 +16,36 @@
   flex-wrap: nowrap;
   overflow-x: scroll;
   white-space: nowrap;
-  overflow-x: hidden;
-  overflow-y: hidden;
+
  
+}
+
+
+
+
+::-webkit-scrollbar {
+  width: 20px;
+  
+  
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0); 
+  border-radius: 20px;
+  
+  
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #ff7300 ; 
+  border-radius: 20px;
+  cursor: grab;
+  
+  
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d45500 ; 
+  transition-duration: 10s;
+
 }

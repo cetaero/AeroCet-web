@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       const handleScroll = (event: WheelEvent) => {
         event.preventDefault();
         element.scrollBy({
-          left: event.deltaY < 0 ? -1000 : 1000,
+          left: event.deltaY < 0 ? -1500 : 1000,
           behavior: 'smooth',
         });
       };
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className='home' id='home' ref={scrollContainerRef}>
+    <div className='home h-svh' id='home' ref={scrollContainerRef}>
       <Navbar/>
       <div className='main'>
         <Intro/>
