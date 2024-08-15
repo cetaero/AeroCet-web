@@ -1,11 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Sancreek&display=swap');
 
-h1{
-          font-family: "Sancreek", serif;
-          font-weight: 400;
-          font-style: normal;
+h1 {
+  font-family: "Sancreek", serif;
+  font-weight: 400;
+  font-style: normal;
 }
-.nav{
-          -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+
+.nav {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  width: 250px; /* Default width */
+  transition: width 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.nav.closed {
+  width: 0;
+  overflow: hidden;
+}
+
+.nav.no-blur {
+  backdrop-filter: none;
+}
+
+.menu-items {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateX(-10%);
+}
+
+.menu-items.open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu-items.closed {
+  opacity: 0;
+  transform: translateX(-10%);
+}
+
+/* Ensure smooth transition for the mobile view */
+@media (min-width: 768px) {
+  .menu-items {
+    opacity: 1;
+    transform: translateX(0);
+    transition: none; /* No animation on larger screens */
+  }
+}
+
+/* Hide the toggle button when the menu is open */
+.md:hidden {
+  display: none;
 }
