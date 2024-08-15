@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
+import Navbar from '../Components/Navbar';
 
 const Home: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -26,6 +27,7 @@ const Home: React.FC = () => {
 
   return (
     <div className='home' id='home' ref={scrollContainerRef}>
+      <Navbar/>
       <div className='main bg-orange-600'>
         <h1>AeroCET Intro</h1>
       </div>
