@@ -4,6 +4,15 @@
   align-items: center;
   height: 100vh; /* or any height you prefer */
   text-align: center;
+  width: 100vw;
+  min-width: 100vw;
   color: white; /* This will make the text stand out on the background colors */
 
+}
+
+.home{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  
 }
