@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import Navbar from '../Components/Navbar';
+import Intro from '../Components/Intro';
+import Gallery from '../Components/Gallery';
+import Team from '../Components/Team';
+import About from '../Components/About';
+import Contact from '../Components/Contact';
 
 const Home: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -28,20 +33,20 @@ const Home: React.FC = () => {
   return (
     <div className='home' id='home' ref={scrollContainerRef}>
       <Navbar/>
-      <div className='main bg-orange-600'>
-        <h1>AeroCET Intro</h1>
+      <div className='main'>
+        <Intro/>
       </div>
-      <div className='main bg-green-600'>
-        <h1>AeroCET Gallery</h1>
+      <div className='main'>
+        <Gallery/>
       </div>
-      <div className='main bg-rose-800'>
-        <h1>AeroCET Teams</h1>
+      <div className='main'>
+        <Team/>
       </div>
-      <div className='main bg-indigo-600'>
-        <h1>AeroCET About</h1>
+      <div className='main'>
+        <About/>
       </div>
-      <div className='main bg-teal-700'>
-        <h1>AeroCET Contact</h1>
+      <div className='main'>
+        <Contact/>
       </div>
     </div>
   );
