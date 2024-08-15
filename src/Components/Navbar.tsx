@@ -3,7 +3,7 @@ import logo from '../assets/AeroCET-logo.png';
 import './Navbar.css';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
