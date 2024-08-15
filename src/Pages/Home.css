@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* or any height you prefer */
+  min-height: 98vh; /* or any height you prefer */
   text-align: center;
   width: 100vw;
   min-width: 100vw;
@@ -14,5 +14,7 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  
+  white-space: nowrap;
+
+ 
 }
