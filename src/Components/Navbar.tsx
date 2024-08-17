@@ -105,31 +105,31 @@ function Navbar() {
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('about')}>
-            {visibleSection === 'about' && <img src={logo} alt='About Logo' className='loader-image h-16' />}
+            <img src={logo} alt='About Logo' className={`load-image ${visibleSection === 'about' ? 'show' : ''} h-16`} />
             <h1 className='text-2xl mx-3'>About</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('contact')}>
-            {visibleSection === 'contact' && <img src={logo} alt='Contact Logo' className='loader-image h-16' />}
+            <img src={logo} alt='Contact Logo' className={`load-image ${visibleSection === 'contact' ? 'show' : ''} h-16`} />
             <h1 className='text-2xl mx-3'>Contact</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('intro')}>
-            {visibleSection === 'intro' && <img src={logo} alt='Home Logo' className='loader-image h-16' />}
+            <img src={logo} alt='Home Logo' className={`load-image ${visibleSection === 'intro' ? 'show' : ''} h-16`} />
             <h1 className='text-2xl mx-3'>Home</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('team')}>
-            {visibleSection === 'team' && <img src={logo} alt='Teams Logo' className='loader-image h-16' />}
+            <img src={logo} alt='Teams Logo' className={`load-image ${visibleSection === 'team' ? 'show' : ''} h-16`} />
             <h1 className='text-2xl mx-3'>Teams</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('gallery')}>
-            {visibleSection === 'gallery' && <img src={logo} alt='Gallery Logo' className='loader-image h-16' />}
+            <img src={logo} alt='Gallery Logo' className={`load-image ${visibleSection === 'gallery' ? 'show' : ''} h-16`} />
             <h1 className='text-2xl mx-3'>Gallery</h1>
           </div>
         </div>
