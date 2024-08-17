@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import logo from '../assets/AeroCET-logo.png';
 import './Navbar.css';
 
 function Navbar() {
-  // State to manage whether the menu is open or closed
   const [isOpen, setIsOpen] = useState(true);
+  const [visibleSection, setVisibleSection] = useState<string | null>(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,11 +15,43 @@ function Navbar() {
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
-    // Close the menu on mobile after selecting an item
     if (window.innerWidth < 768) {
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    const sectionIds = ['about', 'contact', 'intro', 'gallery', 'team'];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Adjust as needed to control when the section is considered in view
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
 
   return (
     <div className='z-10'>
@@ -73,33 +105,34 @@ function Navbar() {
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('about')}>
-            <img src={logo} alt='About Logo' className='loader-image h-16' />
+            {visibleSection === 'about' && <img src={logo} alt='About Logo' className='loader-image h-16' />}
             <h1 className='text-2xl mx-3'>About</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('contact')}>
-            <img src={logo} alt='Contact Logo' className='loader-image h-16' />
+            {visibleSection === 'contact' && <img src={logo} alt='Contact Logo' className='loader-image h-16' />}
             <h1 className='text-2xl mx-3'>Contact</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('intro')}>
-            <img src={logo} alt='Home Logo' className='loader-image h-16' />
+            {visibleSection === 'intro' && <img src={logo} alt='Home Logo' className='loader-image h-16' />}
             <h1 className='text-2xl mx-3'>Home</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
-            onClick={() => handleScroll('gallery')}>
-            <img src={logo} alt='Gallery Logo' className='loader-image h-16' />
-            <h1 className='text-2xl mx-3'>Gallery</h1>
+            onClick={() => handleScroll('team')}>
+            {visibleSection === 'team' && <img src={logo} alt='Teams Logo' className='loader-image h-16' />}
+            <h1 className='text-2xl mx-3'>Teams</h1>
           </div>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
-            onClick={() => handleScroll('team')}>
-            <img src={logo} alt='Teams Logo' className='loader-image h-16' />
-            <h1 className='text-2xl mx-3'>Teams</h1>
+            onClick={() => handleScroll('gallery')}>
+            {visibleSection === 'gallery' && <img src={logo} alt='Gallery Logo' className='loader-image h-16' />}
+            <h1 className='text-2xl mx-3'>Gallery</h1>
           </div>
+
         </div>
       </div>
     </div>
