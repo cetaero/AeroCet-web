@@ -10,7 +10,7 @@ export default function Contact() {
       <div className="flex-1 flex items-center justify-center flex-col ">
        <img src={drone} alt='Loader-image' className='loader-image h-48' />
        <h2>SUPPORT US IN THE UPCOMING SAE <br></br>Competitions!</h2>
-       <button><img src={download} alt='Loader-image' className='loader-image h-14' /></button>
+       <button><img src={download} alt='Loader-image' className='loader-image h-14 my-4' /></button>
       </div>
       
       <div className="flex w-full justify-evenly my-10">

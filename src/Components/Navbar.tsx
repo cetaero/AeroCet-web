@@ -10,7 +10,8 @@ function Navbar() {
   };
 
   return (
-    <div className={`fixed top-0 left-0 h-full p-6 shadow-lg nav rounded-r-3xl ${isOpen ? 'open' : 'closed'}`}>
+    <div className='z-10'>
+          <div className={`fixed top-0 left-0 h-full p-6 shadow-lg nav rounded-r-3xl ${isOpen ? 'open' : 'closed'}`}>
       {/* Toggle Button for Mobile View */}
       <div className='md:hidden flex justify-between items-center'>
         {!isOpen && (
@@ -56,7 +57,7 @@ function Navbar() {
       </div>
 
       {/* Menu Items */}
-      <div className={`menu-items ${isOpen ? 'open' : 'closed'} lg:flex lg:flex-col lg:justify-around h-svh`}>
+      <div className={`menu-items ${isOpen ? 'open' : 'closed'} lg:flex lg:flex-col lg:justify-around h-svh  relative`}>
         <div className='flex flex-row items-center mb-3'>
           <img src={logo} alt='Loader-image' className='loader-image h-16' />
           <h1 className='text-2xl mx-3'>About</h1>
@@ -78,6 +79,7 @@ function Navbar() {
           <h1 className='text-2xl mx-3'>Teams</h1>
         </div>
       </div>
+    </div>
     </div>
   );
 }
