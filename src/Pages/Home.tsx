@@ -34,19 +34,19 @@ const Home: React.FC = () => {
     <div className='home h-svh' id='home' ref={scrollContainerRef}>
 
   <Navbar/>
-      <div className='main'>
+      <div className='main' id='intro'>
         <Intro/>
       </div>
-      <div className='main'>
+      <div className='main' id='team'>
         <Team/>
       </div>
-      <div className='main'>
+      <div className='main' id='gallery'>
         <Gallery/>
       </div>
-      <div className='main'>
+      <div className='main' id='about'>
         <About/>
       </div>
-      <div className='main'>
+      <div className='main' id='contact'>
         <Contact/>
       </div>
       
