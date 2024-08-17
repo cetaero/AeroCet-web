@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { App } from './app/App';
+import  {App}  from './app/App'
 import loaderImage from './assets/AeroCET-logo.png';
 import './Loader.css';
 
@@ -9,7 +9,7 @@ export default function Loader() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowApp(true);
-    }, 200);
+    }, 2000);
 
     return () => {
       clearTimeout(timeoutId);

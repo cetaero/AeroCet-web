@@ -1,21 +1,24 @@
+body{
+  margin: 0;
+  padding: 0;
+}
 .main{
   display: flex;
   justify-content: center;
   align-items: center;
-   /* or any height you prefer */
+  min-height: 100vh;
   text-align: center;
   width: 100vw;
   min-width: 100vw;
   overflow-y: hidden;
+  overflow-x: hidden;
   color: white; /* This will make the text stand out on the background colors */
 
 }
 
 .home{
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-  white-space: nowrap;
+  overflow-x: hidden;
 
  
 }

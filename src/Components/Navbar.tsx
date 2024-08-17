@@ -57,23 +57,23 @@ function Navbar() {
 
       {/* Menu Items */}
       <div className={`menu-items ${isOpen ? 'open' : 'closed'} lg:flex lg:flex-col lg:justify-around h-svh`}>
-        <div className='flex flex-row items-center mb-4'>
+        <div className='flex flex-row items-center mb-3'>
           <img src={logo} alt='Loader-image' className='loader-image h-16' />
           <h1 className='text-2xl mx-3'>About</h1>
         </div>
-        <div className='flex flex-row items-center mb-4'>
+        <div className='flex flex-row items-center mb-3'>
           <img src={logo} alt='Loader-image' className='loader-image h-16' />
           <h1 className='text-2xl mx-3'>Contact</h1>
         </div>
-        <div className='flex flex-row items-center mb-4'>
+        <div className='flex flex-row items-center mb-3'>
           <img src={logo} alt='Loader-image' className='loader-image h-16' />
           <h1 className='text-2xl mx-3'>Home</h1>
         </div>
-        <div className='flex flex-row items-center mb-4'>
+        <div className='flex flex-row items-center mb-3'>
           <img src={logo} alt='Loader-image' className='loader-image h-16' />
           <h1 className='text-2xl mx-3'>Gallery</h1>
         </div>
-        <div className='flex flex-row items-center'>
+        <div className='flex flex-row items-center mb-3'>
           <img src={logo} alt='Loader-image' className='loader-image h-16' />
           <h1 className='text-2xl mx-3'>Teams</h1>
         </div>
