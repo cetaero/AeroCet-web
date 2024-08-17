@@ -8,6 +8,15 @@ export default function Gallery() {
         <img src={dummy} alt='Loader-image' className='rounded-3xl' />
         <img src={dummy} alt='Loader-image' className='rounded-3xl' />
         <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
+        <img src={dummy} alt='Loader-image' className='rounded-3xl' />
 
         
     </div>
