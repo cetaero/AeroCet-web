@@ -5,7 +5,7 @@ import download from '../assets/images/downloadButton.png'
 
 export default function Contact() {
   return (
-    <div className="p-24 w-full shad m-36 items-center">
+    <div className="p-24 w-full shad m-36 items-center h-[500px] flex-1 flex justify-around flex-col">
       <div className="flex-1 flex items-center flex-col">
        <img src={drone} alt='Loader-image' className='loader-image h-48' />
        <div className='flex-1 w-full float-start'>
@@ -13,7 +13,7 @@ export default function Contact() {
        <button><img src={download} alt='Loader-image' className='loader-image h-14' /></button>
        </div>
       </div>
-      <div className="flex justify-center mx-10 lg:space-x-48 sm:space-x-8 px-12">
+      <div className="flex justify-center mx-10 lg:space-x-48 sm:space-x-8 px-12 my-6">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:scale-110 transition-transform">
           <FaFacebookF size={32} />
         </a>
