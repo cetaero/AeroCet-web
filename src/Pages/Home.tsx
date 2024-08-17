@@ -32,16 +32,16 @@ const Home: React.FC = () => {
 
   return (
     <div className='home h-svh' id='home' ref={scrollContainerRef}>
-{/*
- <Navbar/>
+
+    {/*<Navbar/>
       <div className='main'>
         <Intro/>
       </div>
       <div className='main'>
-        <Gallery/>
+        <Team/>
       </div>
       <div className='main'>
-        <Team/>
+        <Gallery/>
       </div>
       <div className='main'>
         <About/>
@@ -49,12 +49,15 @@ const Home: React.FC = () => {
       <div className='main'>
         <Contact/>
       </div>
-*/}
-    <div className='main'>
-        <Contact/>
+      
+      */}
+       <div className='main'>
+        <Gallery/>
       </div>
-    </div>
-  );
+      </div>
+    
+  )
+  
 };
 
 export default Home;
