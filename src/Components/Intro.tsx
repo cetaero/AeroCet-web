@@ -10,8 +10,8 @@ export default function Intro() {
   // MouseMove event handler with correct type
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const { innerWidth, innerHeight } = window;
-    const x = (e.clientX - innerWidth / 2) / 50;
-    const y = (e.clientY - innerHeight / 2) / 50;
+    const x = (e.clientX - innerWidth / 2) / 2;
+    const y = (e.clientY - innerHeight / 2) / 1;
     setOffset({ x, y });
   };
 
