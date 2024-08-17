@@ -7,7 +7,7 @@ function Navbar() {
   const [visibleSection, setVisibleSection] = useState<string | null>(null);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
   const handleScroll = (sectionId: string) => {
@@ -22,17 +22,24 @@ function Navbar() {
 
   useEffect(() => {
     const sectionIds = ['about', 'contact', 'intro', 'gallery', 'team'];
+    let currentVisibleSection: string | null = null;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleSection(entry.target.id);
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+        if (visibleEntries.length > 0) {
+          visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          const mostVisibleEntry = visibleEntries[0];
+          if (mostVisibleEntry.target.id !== currentVisibleSection) {
+            currentVisibleSection = mostVisibleEntry.target.id;
+            setVisibleSection(currentVisibleSection);
           }
-        });
+        }
       },
       {
-        threshold: 0.5, // Adjust as needed to control when the section is considered in view
+        root: null,
+        rootMargin: '0px',
+        threshold: Array.from(Array(100).keys(), (i) => i / 100),
       }
     );
 
@@ -55,53 +62,46 @@ function Navbar() {
 
   return (
     <div className='z-10'>
-      <div className={`fixed top-0 left-0 h-full p-6 shadow-lg nav rounded-r-3xl ${isOpen ? 'open' : 'closed'}`}>
-        {/* Toggle Button for Mobile View */}
-        <div className='md:hidden flex justify-between items-center'>
-          {!isOpen && (
-            <button
-              onClick={toggleMenu}
-              className='text-white focus:outline-none'>
-              {/* Hamburger Icon */}
-              <svg
-                className='w-8 h-8'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M4 6h16M4 12h16m-7 6h7'
-                />
-              </svg>
-            </button>
+      {/* Mobile Toggle Button */}
+      <div className='fixed top-4 left-4 lg:hidden z-10'>
+        <button
+          onClick={toggleMenu}
+          className='text-white focus:outline-none'>
+          {isOpen ? (
+            <svg
+              className='w-8 h-8'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M6 18L18 6M6 6l12 12'
+              />
+            </svg>
+          ) : (
+            <svg
+              className='w-8 h-8'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+              xmlns='http://www.w3.org/2000/svg'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M4 6h16M4 12h16m-7 6h7'
+              />
+            </svg>
           )}
-          {isOpen && (
-            <button
-              onClick={toggleMenu}
-              className='text-white focus:outline-none'>
-              {/* Close Icon */}
-              <svg
-                className='w-8 h-8'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'>
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              </svg>
-            </button>
-          )}
-        </div>
+        </button>
+      </div>
 
+      <div className={`fixed top-0 left-0 h-full p-6 my-10 shadow-lg nav rounded-r-3xl ${isOpen ? 'open' : 'closed'}`}>
         {/* Menu Items */}
-        <div className={`menu-items ${isOpen ? 'open' : 'closed'} lg:flex lg:flex-col lg:justify-around h-svh relative`}>
+        <div className={`menu-items transition-all duration-300 ease-in-out ${isOpen ? 'open' : 'closed'} lg:flex lg:flex-col lg:justify-around h-svh relative`}>
           <div
             className='flex flex-row items-center mb-3 cursor-pointer'
             onClick={() => handleScroll('about')}>
@@ -132,7 +132,6 @@ function Navbar() {
             {visibleSection === 'gallery' && <img src={logo} alt='Gallery Logo' className='loader-image h-16' />}
             <h1 className='text-2xl mx-3'>Gallery</h1>
           </div>
-
         </div>
       </div>
     </div>

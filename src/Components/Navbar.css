@@ -9,7 +9,7 @@ h1 {
 .nav {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  width: 250px; /* Default width */
+  width: 200px; /* Default width */
   transition: width 0.3s ease, backdrop-filter 0.3s ease;
 }
 
