@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import logo from '../assets/AeroCET-logo.png';
 import './Navbar.css';
 
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(true);
   const [visibleSection, setVisibleSection] = useState<string | null>(null);

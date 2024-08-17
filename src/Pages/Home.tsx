@@ -7,7 +7,12 @@ import Team from '../Components/Team';
 import About from '../Components/About';
 import Contact from '../Components/Contact';
 
+import 'aos/dist/aos.css';
+
+
 const Home: React.FC = () => {
+  
+
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -17,7 +22,7 @@ const Home: React.FC = () => {
       const handleScroll = (event: WheelEvent) => {
         event.preventDefault();
         element.scrollBy({
-          left: event.deltaY < 0 ? -2000 : 940,
+          left: event.deltaY < 0 ? -940 : 1920,
           behavior: 'smooth',
         });
       };
@@ -32,12 +37,11 @@ const Home: React.FC = () => {
 
   return (
     <div className='home h-svh' id='home' ref={scrollContainerRef}>
-
-  <Navbar/>
+     <Navbar/>
       <div className='main' id='intro'>
         <Intro/>
       </div>
-      <div className='main' id='team'>
+      <div  className='main' id='team'>
         <Team/>
       </div>
       <div className='main' id='gallery'>
