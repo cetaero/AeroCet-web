@@ -5,7 +5,7 @@ import Intro from '../Components/Intro';
 import Gallery from '../Components/Gallery';
 import Team from '../Components/Team';
 import About from '../Components/About';
-import Contact from '../Components/Contact';
+import Contact from '../Components/Contact'
 
 
 const Home: React.FC = () => {
