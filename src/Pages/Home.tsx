@@ -51,7 +51,7 @@ const Home: React.FC = () => {
       </div>
 */}
     <div className='main'>
-        <Team/>
+        <Contact/>
       </div>
     </div>
   );
