@@ -7,8 +7,6 @@ import Team from '../Components/Team';
 import About from '../Components/About';
 import Contact from '../Components/Contact';
 
-import 'aos/dist/aos.css';
-
 
 const Home: React.FC = () => {
   
