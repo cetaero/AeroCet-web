@@ -52,3 +52,16 @@ body{
   transition-duration: 10s;
 
 }
+.divbg{
+          
+                    
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/images/introBG.png);
+  
+  position: relative;
+  min-width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+        
+}

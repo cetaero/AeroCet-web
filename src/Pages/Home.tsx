@@ -34,7 +34,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className='home h-svh' id='home' ref={scrollContainerRef}>
+    <div className='home h-svh divbg' id='home' ref={scrollContainerRef}>
      <Navbar/>
       <div className='main' id='intro'>
         <Intro/>

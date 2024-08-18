@@ -13,19 +13,7 @@ body{
 }
 
 
-.divbg{
-          
-                    
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-image: url(../assets/images/introBG.png);
-                    
-                    position: relative;
-                    min-width: 100vw;
-                    overflow-y: hidden;
-                    overflow-x: hidden;
-                          
-}
+
 .parallax-image,
 .parallax-text {
   transition: transform 1.5s ease-out;
