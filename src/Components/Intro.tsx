@@ -17,7 +17,7 @@ export default function Intro() {
 
   return (
     <div
-      className="flex w-full h-screen flex-1 flex-col justify-center items-center divbg"
+      className="flex w-full h-screen flex-1 flex-col justify-center items-center"
       onMouseMove={handleMouseMove}
     >
       {/* Plane Image with Parallax Effect */}
