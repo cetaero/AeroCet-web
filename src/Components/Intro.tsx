@@ -24,7 +24,7 @@ export default function Intro() {
       <img
         src={plane}
         alt="Plane"
-        className="parallax-image lg:h-94 aspect-auto lg:mr-64"
+        className="parallax-image lg:h-94 aspect-auto lg:mr-64 z-20"
         style={{
           transform: `translate(${offset.x}px, ${offset.y}px)`,
         }}
@@ -39,6 +39,7 @@ export default function Intro() {
           transform: `translate(${offset.x * -0.5}px, ${offset.y * -0.5}px)`,
         }}
       />
+      <h2 className='z-10 lg:text-[60px] md:text-3xl sm:text-2xl la-belle-aurore-regular lg:mb-20 md:mb-0 sm:mb-0'  >Fly Against the Wind..!</h2>
     </div>
   );
 }
