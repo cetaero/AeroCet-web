@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     if (element) {
       const handleScroll = (event: WheelEvent) => {
         event.preventDefault();
-        const scrollSpeed = 7; // Increase this value to scroll faster
+        const scrollSpeed = 5; // Increase this value to scroll faster
         element.scrollBy({
           left: event.deltaY * scrollSpeed,
           behavior: 'smooth',

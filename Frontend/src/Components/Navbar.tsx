@@ -40,7 +40,7 @@ function Navbar() {
       {
         root: null,
         rootMargin: '0px',
-        threshold: Array.from(Array(100).keys(), (i) => i / 100),
+        threshold: Array.from(Array(101).keys(), (i) => i / 100),
       }
     );
 
