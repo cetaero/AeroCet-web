@@ -15,18 +15,19 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const element = scrollContainerRef.current;
-
+  
     if (element) {
       const handleScroll = (event: WheelEvent) => {
         event.preventDefault();
+        const scrollSpeed = 7; // Increase this value to scroll faster
         element.scrollBy({
-          left: event.deltaY < 0 ? -940 : 1920,
+          left: event.deltaY * scrollSpeed,
           behavior: 'smooth',
         });
       };
-
+  
       element.addEventListener('wheel', handleScroll);
-
+  
       return () => {
         element.removeEventListener('wheel', handleScroll);
       };

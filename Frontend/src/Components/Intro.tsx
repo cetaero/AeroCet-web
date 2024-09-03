@@ -11,7 +11,7 @@ export default function Intro() {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const { innerWidth, innerHeight } = window;
     const x = (e.clientX - innerWidth / 2) / 2;
-    const y = (e.clientY - innerHeight / 2) / 1;
+    const y = (e.clientY - innerHeight / 2) / .9;
     setOffset({ x, y });
   };
 
@@ -39,7 +39,7 @@ export default function Intro() {
           transform: `translate(${offset.x * -0.5}px, ${offset.y * -0.5}px)`,
         }}
       />
-      <h2 className='z-10 lg:text-[60px] md:text-3xl sm:text-2xl la-belle-aurore-regular lg:mb-20 md:mb-0 sm:mb-0'  >Fly Against the Wind..!</h2>
+      <h2 className='z-10 lg:text-[60px] md:text-3xl sm:text-2xl la-belle-aurore-regular lg:mb-60 md:mb-0 sm:mb-0'  >Fly Against the Wind..!</h2>
     </div>
   );
 }
