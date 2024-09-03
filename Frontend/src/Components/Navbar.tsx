@@ -62,7 +62,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div className='z-10'>
+    <div className='z-50'>
       {/* Mobile Toggle Button */}
       <div className='fixed top-4 left-4 lg:hidden z-10'>
         <button
