@@ -1,1 +1,2 @@
-# React + TypeScript
+# Frontend : React(TypeScript) 
+# Backend : Nodejs

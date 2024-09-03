@@ -40,7 +40,7 @@ function Navbar() {
       {
         root: null,
         rootMargin: '0px',
-        threshold: Array.from(Array(100).keys(), (i) => i / 100),
+        threshold: Array.from(Array(101).keys(), (i) => i / 100),
       }
     );
 
@@ -62,7 +62,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div className='z-10'>
+    <div className='z-50'>
       {/* Mobile Toggle Button */}
       <div className='fixed top-4 left-4 lg:hidden z-10'>
         <button
