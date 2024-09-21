@@ -1,22 +1,58 @@
 import jet from '../assets/images/jet.png';
+import { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
 
 export default function About() {
+  const [isActive, setIsActive] = useState(false);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+
+  // Intersection Observer logic
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsActive(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Trigger when 10% of the component is visible
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="p-6 lg:p-12 xl:p-24 w-full  flex flex-col items-center justify-center shad">
-      <div className=" shadow-lg rounded-lg p-6 lg:p-12 w-full max-w-4xl flex flex-col items-center text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ">About Us</h1>
+    <div
+      ref={aboutRef}
+      className={clsx(
+        "p-6 lg:p-12 xl:p-24 w-full flex flex-col items-center justify-center shad",
+        { 'opacity-0 translate-y-32': !isActive }, // Hidden state
+        { 'opacity-100 translate-y-0 transition-all duration-1000 delay-300 ease-in-out': isActive } // Visible state
+      )}
+    >
+      <div className={clsx(
+        "shadow-lg rounded-lg p-6 lg:p-12 w-full max-w-4xl flex flex-col items-center text-center",
+        { 'opacity-0 translate-y-8': !isActive }, // Hidden state
+        { 'opacity-100 translate-y-0 transition-all duration-500 delay-500 ease-in-out': isActive } // Visible state
+      )}>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">About Us</h1>
         <img
           src={jet}
           alt="About Image"
-          className="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full shadow-md object-cover mb-6"
+          className={clsx(
+            "w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full shadow-md object-cover mb-6",
+            { 'opacity-0 translate-y-20': !isActive }, // Hidden state
+            { 'opacity-100 translate-y-0 transition-transform duration-1000 delay-500 ease-in-out': isActive } // Visible state
+          )}
         />
         <p className="text-base md:text-lg lg:text-xl mb-6">
-           We believe in innovation, integrity, and commitment to excellence. Our team of experts works tirelessly to deliver high-quality solutions that exceed expectations and drive success. Join us on our journey as we continue to push the boundaries and set new standards in our industry.
+          We believe in innovation, integrity, and commitment to excellence. Our team of experts works tirelessly to deliver high-quality solutions that exceed expectations and drive success. Join us on our journey as we continue to push the boundaries and set new standards in our industry.
         </p>
-        <div className="flex justify-center gap-4">
-
-          
-        </div>
       </div>
     </div>
   );
