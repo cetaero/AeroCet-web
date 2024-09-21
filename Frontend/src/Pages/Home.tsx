@@ -8,6 +8,8 @@ import About from '../Components/About';
 import Contact from '../Components/Contact'
 
 
+
+
 const Home: React.FC = () => {
   
 
@@ -41,7 +43,7 @@ const Home: React.FC = () => {
         <Intro/>
       </div>
       <div  className='main' id='team'>
-        <Team/>
+        <Team />
       </div>
       <div className='main' id='gallery'>
         <Gallery/>
