@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Intro.css';
 import text from '../assets/images/introText.png';
 import plane from '../assets/images/plane.png';
+import clsx from 'clsx';
 
 export default function Intro() {
   // Define the state type for the offset
@@ -15,8 +16,32 @@ export default function Intro() {
     setOffset({ x, y });
   };
 
+  const [isActive, setIsActive] = useState(false);
+  const introRef = useRef<HTMLDivElement | null>(null);
+
+  // Intersection Observer logic
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsActive(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Trigger when 10% of the component is visible
+    );
+
+    if (introRef.current) {
+      observer.observe(introRef.current);
+    }
+
+    return () => {
+      if (introRef.current) {
+        observer.unobserve(introRef.current);
+      }
+    };
+  }, []);
+  
   return (
     <div
+        ref={introRef}
       className="flex w-full h-screen flex-1 flex-col justify-center items-center"
       onMouseMove={handleMouseMove}
     >
@@ -39,7 +64,11 @@ export default function Intro() {
           transform: `translate(${offset.x * -0.5}px, ${offset.y * -0.5}px)`,
         }}
       />
-      <h2 className='z-10 lg:text-[60px] md:text-3xl sm:text-2xl la-belle-aurore-regular lg:mb-60 md:mb-0 sm:mb-0'  >Fly Against the Wind..!</h2>
+      <h2 className={clsx(
+            'z-10 lg:text-[60px] md:text-3xl sm:text-2xl la-belle-aurore-regular lg:mb-60 md:mb-0 sm:mb-0',
+            { 'opacity-0 scale-0': !isActive }, // Hidden state
+            { 'opacity-100 scale-100 transition-transform duration-1000 delay-0 ease-in-out': isActive } // Visible state
+          )}  >Fly Against the Wind..!</h2>
     </div>
   );
 }
